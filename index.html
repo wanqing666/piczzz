@@ -1,98 +1,98 @@
-<！DOCTYPE超文本标记语言（html）>
-<超文本标记语言 郎="zh-CN">
-<头>
-    <梅塔 字符集="UTF-8">
-    <梅塔 名字="viewport" 内容="width=device-width, initial-scale=1.0">
-    <标题>高级图片压缩器</标题>
-    <链接 rel="stylesheet" href="styles.css">
-</头>
-<身体>
-    <级 班级="container">
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>高级图片压缩器</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
         <h1>高级图片压缩器</h1>
         
-        <级 班级="upload-area" 身份证="dropArea">
-            <输入 类型="file" 身份证="fileInput" 接受="image/*" 倍数>
-            <标签 为="fileInput" 班级="upload-label">
-                <可缩放矢量图形（svg） xmlns="http://www.w3.org/2000/svg" 宽度="48" 高度="48" 视窗="0 0 24 24" 充满="none" 中风="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                    <路径 D="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></路径>
-                    <多线 点="17 8 12 3 7 8"></多线>
-                    <线 x1="12" y1="3" x2="12" y2="15"></线>
-                </可缩放矢量图形（svg）>
-                <P>点击或拖拽图片到此处</P>
-                <P 班级="small">支持 JPG，PNG，GIF，WebP，AVIF</P>
-            </标签>
-        </级>
+        <div class="upload-area" id="dropArea">
+            <input type="file" id="fileInput" accept="image/*" multiple>
+            <label for="fileInput" class="upload-label">
+                <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"></path>
+                    <polyline points="17 8 12 3 7 8"></polyline>
+                    <line x1="12" y1="3" x2="12" y2="15"></line>
+                </svg>
+                <p>点击或拖拽图片到此处</p>
+                <p class="small">支持JPG, PNG, GIF, WebP, AVIF等格式</p>
+            </label>
+        </div>
         
-        <级 班级="controls">
-            <级 班级="control-group">
-                <标签 为="compressionMode">压缩模式:</标签>
-                <选择 身份证="compressionMode">
-                    <选项 价值="balanced">平衡模式</选项>
-                    <选项 价值="speed">速度优先</选项>
-                    <选项 价值="quality">质量优先</选项>
-                </选择>
-            </级>
+        <div class="controls">
+            <div class="control-group">
+                <label for="compressionMode">压缩模式:</label>
+                <select id="compressionMode">
+                    <option value="balanced">平衡模式</option>
+                    <option value="speed">速度优先</option>
+                    <option value="quality">质量优先</option>
+                </select>
+            </div>
             
-            <级 班级="control-group">
-                <标签 为="quality">压缩质量:</标签>
-                <输入 类型="range" 身份证="quality" 福建话="0.1" 最大值="1" 步="0.1" 价值="0.8">
-                <跨度 身份证="qualityValue">80%</跨度>
-            </级>
+            <div class="control-group">
+                <label for="quality">压缩质量:</label>
+                <input type="range" id="quality" min="0.1" max="1" step="0.1" value="0.8">
+                <span id="qualityValue">80%</span>
+            </div>
             
-            <级 班级="control-group">
-                <标签 为="maxWidth">最大宽度(px):</标签>
-                <输入 类型="number" 身份证="maxWidth" 福建话="100" 价值="1200">
-            </级>
+            <div class="control-group">
+                <label for="maxWidth">最大宽度(px):</label>
+                <input type="number" id="maxWidth" min="100" value="1200">
+            </div>
             
-            <级 班级="control-group">
-                <标签 为="format">输出格式:</标签>
-                <选择 身份证="format">
-                    <选项 价值="auto">自动选择最佳</选项>
-                    <选项 价值="jpeg">图像压缩标准</选项>
-                    <选项 价值="png">巴新</选项>
-                    <选项 价值="webp">韦普</选项>
-                    <选项 价值="avif">AVIF (最新格式)</选项>
-                </选择>
-            </级>
+            <div class="control-group">
+                <label for="format">输出格式:</label>
+                <select id="format">
+                    <option value="auto">自动选择最佳</option>
+                    <option value="jpeg">JPEG</option>
+                    <option value="png">PNG</option>
+                    <option value="webp">WebP</option>
+                    <option value="avif">AVIF (最新格式)</option>
+                </select>
+            </div>
             
-            <级 班级=“控制组高级选项”>
-                <标签 为="advancedOptions">高级选项:</标签>
-                <输入 类型="checkbox" 身份证="advancedOptions">
-                <级 班级="advanced-content" 身份证="advancedContent">
-                    <级 班级="control-group">
-                        <标签 为="chromaSubsampling">色度抽样（JPEG）：</标签>
-                        <选择 身份证="chromaSubsampling">
-                            <选项 价值="4:4:4">4:4:4 (最佳质量)</选项>
-                            <选项 价值="4:2:2">4:2:2 (平衡)</选项>
-                            <选项 价值="4:2:0" 选定>4:2:0 (默认)</选项>
-                        </选择>
-                    </级>
-                    <级 班级="control-group">
-                        <标签 为="pngCompression">PNG压缩级别:</标签>
-                        <输入 类型="range" 身份证="pngCompression" 福建话="1" 最大值="9" 价值="6">
-                        <跨度 身份证="pngCompressionValue">6</跨度>
-                    </级>
-                    <级 班级="control-group">
-                        <标签 为="webpMethod">WebP方法：</标签>
-                        <输入 类型="range" 身份证="webpMethod" 福建话="0" 最大值="6" 价值="4">
-                        <跨度 身份证="webpMethodValue">4</跨度>
-                    </级>
-                </级>
-            </级>
-        </级>
+            <div class="control-group advanced-options">
+                <label for="advancedOptions">高级选项:</label>
+                <input type="checkbox" id="advancedOptions">
+                <div class="advanced-content" id="advancedContent">
+                    <div class="control-group">
+                        <label for="chromaSubsampling">色度抽样(JPEG):</label>
+                        <select id="chromaSubsampling">
+                            <option value="4:4:4">4:4:4 (最佳质量)</option>
+                            <option value="4:2:2">4:2:2 (平衡)</option>
+                            <option value="4:2:0" selected>4:2:0 (默认)</option>
+                        </select>
+                    </div>
+                    <div class="control-group">
+                        <label for="pngCompression">PNG压缩级别:</label>
+                        <input type="range" id="pngCompression" min="1" max="9" value="6">
+                        <span id="pngCompressionValue">6</span>
+                    </div>
+                    <div class="control-group">
+                        <label for="webpMethod">WebP方法:</label>
+                        <input type="range" id="webpMethod" min="0" max="6" value="4">
+                        <span id="webpMethodValue">4</span>
+                    </div>
+                </div>
+            </div>
+        </div>
         
-        <按钮 身份证="compressBtn" 残疾的>开始压缩</按钮>
-        <按钮 身份证="batchDownloadBtn" 残疾的>批量下载</按钮>
+        <button id="compressBtn" disabled>开始压缩</button>
+        <button id="batchDownloadBtn" disabled>批量下载</button>
         
-        <级 班级="results" 身份证="results">
+        <div class="results" id="results">
             <!-- 结果将在这里显示 -->
-        </级>
+        </div>
         
-        <级 班级="performance-info">
-            <P 身份证="performanceInfo"></P>
-        </级>
-    </级>
+        <div class="performance-info">
+            <p id="performanceInfo"></p>
+        </div>
+    </div>
     
-    <剧本 学生代表会="script.js"></剧本>
-</身体>
-</超文本标记语言>
+    <script src="script.js"></script>
+</body>
+</html>
